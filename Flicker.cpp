@@ -19,6 +19,7 @@ Flicker::Flicker(uint8_t pin, unsigned long interval)
 
 Flicker::~ Flicker()
 {
+    stop();
 }
 
 void Flicker::setPin(uint8_t pin){
