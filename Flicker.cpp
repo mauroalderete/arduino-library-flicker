@@ -2,35 +2,34 @@
 #include "Flicker.h"
 
 Flicker::Flicker() {
-/*    this.setPin(0);
-    this.setInterval(0);
-    this.stop();
-    this.status = false;
-    */
+    setPin(0);
+    setInterval(0);
+    stop();
+    status = false;
 }
-/*
-Blink::Blink(uint8_t pin, unsigned long interval)
+
+Flicker::Flicker(uint8_t pin, unsigned long interval)
 {
-    this.setPin(pin);
-    this.setInterval(interval);
-    this.stop();
-    this.status = false;
-    digitalWrite(this._pin, LOW);
+    setPin(pin);
+    setInterval(interval);
+    stop();
+    status = false;
+    digitalWrite(_pin, LOW);
 }
-*/
+
 Flicker::~ Flicker()
 {
 }
-/*
-void Blink::setPin(uint8_t pin){
-    this._pin = pin;
-    pinMode(this._pin, OUTPUT);
+
+void Flicker::setPin(uint8_t pin){
+    _pin = pin;
+    pinMode(_pin, OUTPUT);
 }
 
-uint8_t getPin(){
-    return this._pin;
+uint8_t Flicker::getPin(){
+    return _pin;
 }
-*/
+
 void Flicker::setInterval(unsigned long interval){
     _interval = interval;
 }
@@ -38,46 +37,45 @@ void Flicker::setInterval(unsigned long interval){
 unsigned long Flicker::getInterval(){
     return _interval;
 }
-/*
-int Blink::getStatus(){
-    return this.status? 1: 0;
+
+int Flicker::getStatus(){
+    return status? 1: 0;
 }
 
-BlinkState Blink::getState(){
-    return this.state;
+FlickerState Flicker::getState(){
+    return state;
 }
 
-void Blink::start(){
-    this.state = BlinkState::START;
-    this.lapsed = 0;
+void Flicker::start(){
+    state = FlickerState::START;
+    lapsed = 0;
 }
 
-void Blink::pause(){
-    this.state = BlinkState::PAUSE;
+void Flicker::pause(){
+    state = FlickerState::PAUSE;
 }
 
-void Blink::resume(){
-    this.state = BlinkState::START;
+void Flicker::resume(){
+    state = FlickerState::START;
 }
 
-void Blink::stop(){
-    this.state = BlinkState::STOP;
-    this.lapsed = 0;
+void Flicker::stop(){
+    state = FlickerState::STOP;
+    lapsed = 0;
 }
 
-void Blink::loop(){
-    if ( this.state == BlinkState::START ) {
+void Flicker::loop(){
+    if ( state == FlickerState::START ) {
         unsigned long current = millis();
-        if ( current - this.lapsed >= this._interval ) {
-            this.lapsed = current;
+        if ( current - lapsed >= _interval ) {
+            lapsed = current;
 
-            this.status = !this.status;
-            if (this.status) {
-                digitalWrite(this._pin, HIGH);
+            status = !status;
+            if (status) {
+                digitalWrite(_pin, HIGH);
             } else {
-                digitalWrite(this._pin, LOW);
+                digitalWrite(_pin, LOW);
             }
         }
     }
 }
-*/

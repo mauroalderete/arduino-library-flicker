@@ -5,34 +5,35 @@
 
 /* Hace que un pin, led, parpadee sin blockeo de codigo. Utiliza la funcion milis
 */
-/*
-enum class BlinkState {
+
+enum class FlickerState {
     STOP, 
     PAUSE, 
     START
 }; 
-*/
+
 class Flicker
 {
 private:
-    //uint8_t _pin;
+    uint8_t _pin;
     unsigned long _interval;
- /*   unsigned long lapsed;
+    unsigned long lapsed;
     bool status;
-    BlinkState state;
-*/
+    FlickerState state;
+
 public:
     Flicker();
-//    Flicker(uint8_t pin, unsigned long interval);
+    Flicker(uint8_t pin, unsigned long interval);
     ~Flicker();
-/*
+
     uint8_t getPin();
     void setPin(uint8_t pin);
-*/
+
     unsigned long getInterval();
     void setInterval(unsigned long interval);
-/*
-    BlinkState getState();
+
+    FlickerState getState();
+    int getStatus();
 
     void start();
     void pause();
@@ -40,7 +41,7 @@ public:
     void stop();
 
     void loop();
-*/
+
 };
 
 #endif
