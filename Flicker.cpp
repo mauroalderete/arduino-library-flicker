@@ -49,7 +49,7 @@ FlickerState Flicker::getState(){
 
 void Flicker::start(){
     state = FlickerState::START;
-    lapsed = 0;
+    lapsed = millis();
 }
 
 void Flicker::pause(){
