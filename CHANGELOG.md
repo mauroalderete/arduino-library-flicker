@@ -1,4 +1,14 @@
-# 20200202
+# CHANGELOG
+
+## v1.0.1 - 20200907
+
+Se modifico el proyecto para ajustarlo a las convenciones de librerias de Arduino y a las convenciones de C++.
+
+Se agrego documentación sobre el uso de la libreria y se armo un ejemplo sencillo de uso.
+
+Se agregaron instrucciones en el README.md para la instalación, actualización y selección de version de la libreria utilizando las utilizades que ofrece git
+
+## v1.0.0 - 20200202
 
 Creacion de libreria Flicker
 
