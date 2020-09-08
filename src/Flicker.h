@@ -27,42 +27,42 @@ public:
     Flicker(uint8_t pin, unsigned long interval);
     ~Flicker();
 
-    uint8_t getPin();
-    void setPin(uint8_t pin);
+    uint8_t GetPin();
+    void SetPin(uint8_t pin);
 
-    unsigned long getInterval();
+    unsigned long GetInterval();
     
     /* @brief Configura la duracion del nivel alto y del nivel bajo de la señal en milisegundos
     */
-    void setInterval(unsigned long interval);
+    void SetInterval(unsigned long interval);
 
     /* @brief Devuelve el estado del objeto: Detenido, pausado o iniciado.
     */
-    FlickerState getState();
+    FlickerState GetState();
 
     /* @brief Devuelve el actual estado HIGH o LOW de la señal.
     */
-    int getStatus();
+    int GetStatus();
 
     /* @brief Inicia el parpadeo.
     */
-    void start();
+    void Start();
 
     /* @brief Detiene el parpadeo sin reiniciar el estado de las variables de control.
     */
-    void pause();
+    void Pause();
 
     /* @brief Reinicia el parpadeo desde donde lo dejo.
     */
-    void resume();
+    void Resume();
 
     /* @brief Detiene y reinicia las varaibles asociadas al control del parpadeo.
     */
-    void stop();
+    void Stop();
 
     /* @brief Ejecuta un ciclo del parpadeo. Es obligatorio ubicarlo en la función loop.
     */
-    void loop();
+    void Loop();
 
 };
 

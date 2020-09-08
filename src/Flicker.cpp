@@ -2,70 +2,70 @@
 #include "Flicker.h"
 
 Flicker::Flicker() {
-    setPin(0);
-    setInterval(0);
-    stop();
+    SetPin(0);
+    SetInterval(0);
+    Stop();
     status = false;
 }
 
 Flicker::Flicker(uint8_t pin, unsigned long interval)
 {
-    setPin(pin);
-    setInterval(interval);
-    stop();
+    SetPin(pin);
+    SetInterval(interval);
+    Stop();
     status = false;
     digitalWrite(_pin, LOW);
 }
 
 Flicker::~ Flicker()
 {
-    stop();
+    Stop();
 }
 
-void Flicker::setPin(uint8_t pin){
+void Flicker::SetPin(uint8_t pin){
     _pin = pin;
     pinMode(_pin, OUTPUT);
 }
 
-uint8_t Flicker::getPin(){
+uint8_t Flicker::GetPin(){
     return _pin;
 }
 
-void Flicker::setInterval(unsigned long interval){
+void Flicker::SetInterval(unsigned long interval){
     _interval = interval;
 }
 
-unsigned long Flicker::getInterval(){
+unsigned long Flicker::GetInterval(){
     return _interval;
 }
 
-int Flicker::getStatus(){
+int Flicker::GetStatus(){
     return status? 1: 0;
 }
 
-FlickerState Flicker::getState(){
+FlickerState Flicker::GetState(){
     return state;
 }
 
-void Flicker::start(){
+void Flicker::Start(){
     state = FlickerState::START;
     lapsed = millis();
 }
 
-void Flicker::pause(){
+void Flicker::Pause(){
     state = FlickerState::PAUSE;
 }
 
-void Flicker::resume(){
+void Flicker::Resume(){
     state = FlickerState::START;
 }
 
-void Flicker::stop(){
+void Flicker::Stop(){
     state = FlickerState::STOP;
     lapsed = 0;
 }
 
-void Flicker::loop(){
+void Flicker::Loop(){
     if ( state == FlickerState::START ) {
         unsigned long current = millis();
         if ( current - lapsed >= _interval ) {
